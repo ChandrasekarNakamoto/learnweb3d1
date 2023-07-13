@@ -27,17 +27,17 @@ def lambda_handler(event, context):
         if 'Item' in response and response['Item']['Password'] == Password:
            return {
                 
-           'statusCode': 200,
-  'headers': { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' },
-            'body': json.dumps(True)
+            'statusCode': 200,
+            'headers': { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' },
+            'body': json.dumps("True")
 
             }
 
         else:
             return{
             'statusCode':401,
-  'headers': { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' },
-            'body': json.dumps(False)
+            'headers': { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' },
+            'body': json.dumps("False")
             }
 
     except Exception as e:
@@ -45,7 +45,7 @@ def lambda_handler(event, context):
         return {
 
             'statusCode': 500,
-  'headers': { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' },
+            'headers': { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' },
             'body': str(e)
 
         }
